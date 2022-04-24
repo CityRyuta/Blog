@@ -14,3 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PostController@index');
+
+Route::get('/posts/create', 'PostController@create');
+
+Route::get('/posts/{post}', 'PostController@show');
+
+/*ブログ投稿作成実行用ルーティング*/
+Route::post('/posts', 'PostController@store');
