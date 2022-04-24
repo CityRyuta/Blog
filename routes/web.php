@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PostController@index');
+
+Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
 Route::get('/posts/{post}', 'PostController@show');
-/*RESTful思想に則り、ブログ投稿詳細のURLは［/posts/(対象データのID)］とします。*/
-/*ex) IDが1のpostsテーブルデータを表示する場合、URLは［https://〜〜〜/posts/1］にします。*/
+Route::post('/posts', 'PostController@store');
+
+/*ブログ投稿編集関連のルーティング*/
+
+
